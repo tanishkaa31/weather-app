@@ -8,6 +8,7 @@ const geocoding_module = require('./utils/geocoding.js')
 // console.log(path.join(__dirname, '../public'))
 
 const app = express()       //express = function, not object
+const port = process.env.PORT || 3200 //set by heroku; 3200 = default fallback
 
 //Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -94,8 +95,8 @@ app.get('*', (req, res)=> {
 })
 
 //Setup port
-app.listen(3200, () => {
-    console.log("Server up and running on port 3200.")
+app.listen(port, () => {
+    console.log("Server up and running on port " + port)
 })
 
 
