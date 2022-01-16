@@ -18,9 +18,13 @@ const forecast = (longitude, latitude, callback) => {
             const data = parsedData.current
             const temperature =  data.temperature
             const weather = data.weather_descriptions[0]
+            const feelsLike = data['feelslike']
+            const humidity = data.humidity
             callback(undefined, {
                 temperature,
-                weather
+                weather,
+                feelsLike,
+                humidity
             })               
         }
     })

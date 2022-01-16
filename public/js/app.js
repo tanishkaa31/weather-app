@@ -22,7 +22,7 @@ weatherForm.addEventListener('submit', (event) => {
         }
         else{
             message1.textContent = 'Location: ' + data.location
-            message2.textContent = 'Temperature (in Celsius): ' + data.temperature  
+            message2.textContent = 'The current temperature is ' + data.temperature + ' degrees out. It feels like it is ' + data.feelsLike + ' degrees out. There is ' + data.humidity + '% humidity.'  
             message3.textContent = 'Weather Description: ' + data['weather description']
         }
     })

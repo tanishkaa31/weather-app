@@ -62,7 +62,7 @@ app.get('/weather', (req, res) => {
            return res.send({error})
        }
 
-       forecasting_module.forecast(longitude, latitude, (error, {temperature, weather} = {}) => {
+       forecasting_module.forecast(longitude, latitude, (error, {temperature, weather, feelsLike, humidity} = {}) => {
            if(error)
            {
                return res.send({error})
@@ -70,8 +70,10 @@ app.get('/weather', (req, res) => {
 
            res.send({
                location,
-               temperature: temperature + " Degrees",
-               'weather description': weather
+               temperature: temperature,
+               'weather description': weather,
+               feelsLike, 
+               humidity
            })
        })
    })
